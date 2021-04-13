@@ -4,7 +4,4 @@
 ##### Courses:
 
 - 1 - ``Introduction to Next.js (2020) / frontendmasters.com / Scott Moss.``
-
-##### Test versions:
-
----
+- 2 - ``Advanced React & GraphQL (2021) / advancedreact / Wes Bos.``
