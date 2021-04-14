@@ -1,13 +1,16 @@
-import React from 'react'
+/** @jsxImportSource theme-ui */
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
-const NoteParams = () => {
+const _ = () => {
   const router = useRouter()
-  const { id } = router.query
+  const { id }= router.query
 
   return (
-    <h1>Note /{ id }</h1>
+    <div sx={{variant: 'containers.page'}}>
+      <h1>Note: {id} </h1>
+    </div>
   )
 }
 
-export default NoteParams
+export default _

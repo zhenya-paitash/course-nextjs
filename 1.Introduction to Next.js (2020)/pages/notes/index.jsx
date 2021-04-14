@@ -1,26 +1,28 @@
-import React from 'react'
+/** @jsxImportSource theme-ui */
 import Link from 'next/link'
 
-const Note = () => {
-  const notes = Array.from({ length: 15 }, (_, idx) => ({ id: idx + 1, title: `Note: ${idx + 1}` }))
+const _ = () => {
+  const notes = new Array(15).fill(1).map((e, i) => ({id: i, title: `This is my note ${i}`}))
 
   return (
-    <>
-      <h1>Notes</h1>
+    <div sx={{variant: 'containers.page'}}>
+      <h1>My Notes</h1>
 
-      {notes.map(note => (
-        <div key={note.id}>
-          <Link
-            href="/notes/[id]"
-            as={`/notes/${note.id}`}
-          >
-            <a><strong>{note.title}</strong></a>
-          </Link>
-        </div>
-      ))}
-
-    </>
+      <div sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap'}}>
+        {notes.map(note => (
+          <div sx={{width: '33%', p: 2}} key={note.id}>
+            <Link href="/notes/[id]" as={`/notes/${note.id}`}>
+              <a sx={{textDecoration: 'none', cursor: 'pointer'}}>
+                <div sx={{variant: 'containers.card',}}>
+                  <strong>{note.title}</strong>
+                </div>
+              </a>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
-export default Note
+export default _
