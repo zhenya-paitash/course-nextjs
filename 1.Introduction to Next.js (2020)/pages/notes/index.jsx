@@ -9,9 +9,8 @@ const Note = () => {
       <h1>Notes</h1>
 
       {notes.map(note => (
-        <div>
+        <div key={note.id}>
           <Link
-            key={note.id}
             href="/notes/[id]"
             as={`/notes/${note.id}`}
           >
