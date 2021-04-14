@@ -1,16 +1,16 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
-const NoteId = () => {
+const NoteParams = () => {
   const router = useRouter()
-
-  const { id } = router.query
+  // /notes/1/2/3/4/5
+  const { params } = router.query
 
   return (
     <h1>
-      Note /{ id }
+      Note /{ params }
     </h1>
   )
 }
 
-export default NoteId
+export default NoteParams
